@@ -26,4 +26,17 @@ function draw() {
 
   for (let y = 30; y < height; y += 60) {
     for (let x = 30; x < width; x += 60) {
-      if (dist(mouse
+      if (dist(mouseX, mouseY, x, y) < 120) {
+        circle(x, y, 60);
+      } else {
+        circle(x, y, 25);
+      }
+    }
+  }
+}
+
+function keyPressed() {
+  if (key === 's') {
+    saveCanvas('bolinhas', 'png');
+  }
+}
